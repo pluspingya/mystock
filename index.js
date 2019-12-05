@@ -8,7 +8,7 @@ const dataStore = {
 
 const app = express()
 app.use(bodyParser.json())
-app.use(express.static('public'))
+app.use(express.static('public')) //TODO: use Nginx to serve client app
 
 require('./endpoints/portfolioEndpoints')(app, dataStore)
 require('./endpoints/balanceEndpoints')(app, dataStore)
