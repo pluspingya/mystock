@@ -1,0 +1,21 @@
+.title {
+  font-weight: bold;
+}
+
+.btn-buy {
+  background-color: green;
+  width: 100%;
+}
+
+.btn-sell {
+  background-color: red;
+  width: 100%;
+}
+
+.btn-submit {
+  width: 100%;
+}
+
+.message {
+  color: gray;
+}
