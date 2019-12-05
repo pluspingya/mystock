@@ -1,5 +1,5 @@
 # MyStock App
-A simple web app that will allow a user to manage a fake stock portfolio and a cash balance. 
+A simple web app that allows a user to manage a fake stock portfolio and a cash balance. 
 
 Basic functionality:
 - Add or remove amounts to their cash balance, which is then used for buying shares.
@@ -13,9 +13,9 @@ The stock prices uses real data from a free (but limited)service (AlphaVantage A
 The application persist state across web page refreshes. However, there's no database implemented.
 
 ## To install
-Make sure you have 'node.js' and 'npm' installed.
+Make sure you have `node.js` and `npm` installed.
 
-Extract a zip file or clone this repository, and use the terminal to enter the project folder using following commands
+Extract a zip file or clone [this repository](https://github.com/pluspingya/mystock), and use the terminal to enter a project folder using following commands
 ```
 cd ./mystock
 npm install
@@ -31,7 +31,7 @@ npm start
 ```
 npm run dev
 ```
-This will run both server and client applications concurrently. It also support auto-restart on code changes.
+This will run both server and client application concurrently. It also support auto-refresh on code changes.
 
 ## To build
 ```
