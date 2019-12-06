@@ -32,11 +32,14 @@ This runs the server and serves react-app from `/client/build` folder.
 ```
 npm run dev
 ```
-This will run both server and client application using `concurrently`. It also support auto-refresh on code changes.
+This will run both server and client application using `concurrently` in "development" evn. It also support auto-refresh on code changes.
 
 ## To build
 ```
 npm run build
 ```
-This will clean up `/client/build/` folder, install dependencies (react-scripts) for the client project, build the react app into `/client/build/` folder.
+This will clean up `/client/build/` folders, install dependencies (react-scripts) for the client project, build the react app into `/client/build/` folder.
 
+## Environment Variables
+MyStock app uses `AlphaVantage API` for real data stock prices, it requires API key in order to access their services.
+To run this application properly, please obtain API Key from [their website](https://www.alphavantage.co/) and provide to the application via an environment variable name `ALPHA_VANTAGE_API_KEY`
