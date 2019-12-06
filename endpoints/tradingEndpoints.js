@@ -2,7 +2,7 @@ const Account = require('../models/account')
 const Portfolio = require('../models/portfolio')
 const PortfolioItem = require('../models/portfolioItem')
 
-const { getQuote } = require('../services/alphavantage')
+const { getQuote, getBatchQuotes } = require('../services/alphavantage')
 
 const getParameters = (req) => {
   return {
@@ -37,9 +37,12 @@ module.exports = (app, {accounts, portfolios}) => {
     const portfolio = Portfolio.getOrCreate(userId, portfolios)
     portfolio.add(new PortfolioItem(symbol, quantity, lastPrice))
 
+    const currentPrices = await getBatchQuotes(portfolio.getSymbols())
+
     res.send({
       account: account.dumpJSON(),
-      portfolio: portfolio.dumpJSON()
+      portfolio: portfolio.dumpJSON(),
+      currentPrices
     })
   })
 
@@ -78,10 +81,12 @@ module.exports = (app, {accounts, portfolios}) => {
 
     account.addBalance(totalSellPrice)
     portfolio.remove(symbol, quantity)
+    const currentPrices = await getBatchQuotes(portfolio.getSymbols())
 
     res.send({
       account: account.dumpJSON(),
-      portfolio: portfolio.dumpJSON()
+      portfolio: portfolio.dumpJSON(),
+      currentPrices
     })
   })
   

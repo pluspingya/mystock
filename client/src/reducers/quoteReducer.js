@@ -28,7 +28,8 @@ export default (state = null, action) => {
     case BUY_STOCK:
     case SELL_STOCK: {
       const quote = action.payload.quote || (state && state.quote)
-      return { ...state, quote }
+      const currentPrices = action.payload.currentPrices || (state && state.currentPrices)
+      return { ...state, quote, currentPrices }
     }
     default:
       return state
