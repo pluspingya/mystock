@@ -26,16 +26,17 @@ npm install --prefix client
 ```
 npm start
 ```
+This runs the server and serves react-app from `/client/build` folder.
 
 ## To develop
 ```
 npm run dev
 ```
-This will run both server and client application concurrently. It also support auto-refresh on code changes.
+This will run both server and client application using `concurrently`. It also support auto-refresh on code changes.
 
 ## To build
 ```
 npm run build
 ```
-This will clean up `/public/` and `/client/build/` folders, install dependencies (react-scripts) for the client project, build the react app into `/client/build/` folder, and lastly copy over `/client/build/` to `/public` in order to serve as static web app.
+This will clean up `/client/build/` folder, install dependencies (react-scripts) for the client project, build the react app into `/client/build/` folder.
 
