@@ -68,7 +68,7 @@ class Trade extends Component {
           </div>
           <div className="col s6">
             <label>Today's Change</label>       
-            <div>{change} (${changePercent})</div>
+            <div>${change} ({changePercent})</div>
           </div>
         </div>
         <hr />

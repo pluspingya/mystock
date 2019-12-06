@@ -37,7 +37,7 @@ class Quote extends Component {
           </div>
           <div className="col s4">
             <label>Today's Change</label>       
-            <div>{change} (${changePercent})</div>
+            <div>${change} ({changePercent})</div>
           </div>
         </div>
         <div className="row">

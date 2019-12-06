@@ -6,7 +6,7 @@ export default class AssetValueView extends Component {
     return (
       <div className="row">
           <div className="col s6">
-            Total Net Value
+            Total Asset Value
           </div>
           <div className="col s6">
             ${this.getAssetValue()}

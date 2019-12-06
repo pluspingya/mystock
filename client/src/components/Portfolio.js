@@ -17,15 +17,18 @@ class Portfolio extends Component {
           <div className="col s3">
             Symbol
           </div>
-          <div className="col s3">
+          <div className="col s2">
             Quantity
           </div>
-          <div className="col s3">
+          <div className="col s2">
             Buy Price
           </div> 
-          <div className="col s3">
+          <div className="col s2">
             Current Price
-          </div>        
+          </div>
+          <div className="col s3">
+            Asset Value
+          </div>
         </div>
         <hr />
         {this.props.symbols.map(this.renderSymbolItem.bind(this))}
@@ -34,22 +37,26 @@ class Portfolio extends Component {
   }
 
   renderSymbolItem(item, index) {
-    const currentPrice = this.props.currentPrices.find(price => price['1. symbol'] === item.symbol)
-
+    let currentPrice = this.props.currentPrices.find(price => price['1. symbol'] === item.symbol)
+    currentPrice = (currentPrice && currentPrice['2. price']) || item.buyPrice //use buyPrice instead if currentPrice isn't provided
+    const assetValue =  item.quantity * currentPrice
     return (
       <Link to={`/quote/${item.symbol}`} key={index}>
         <div className="row">
           <div className="col s3">
             {item.symbol}
           </div>
-          <div className="col s3">
+          <div className="col s2">
             {item.quantity}
           </div>
-          <div className="col s3">
+          <div className="col s2">
             {item.buyPrice}
           </div>        
+          <div className="col s2">
+            {currentPrice}
+          </div>
           <div className="col s3">
-            {currentPrice && currentPrice['2. price']}
+            {assetValue}
           </div>
         </div>
       </Link>
