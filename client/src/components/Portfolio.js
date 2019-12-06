@@ -50,13 +50,13 @@ class Portfolio extends Component {
             {item.quantity}
           </div>
           <div className="col s2">
-            {item.buyPrice}
+            ${item.buyPrice}
           </div>        
           <div className="col s2">
-            {currentPrice}
+            ${currentPrice}
           </div>
           <div className="col s3">
-            {assetValue}
+            ${assetValue}
           </div>
         </div>
       </Link>
