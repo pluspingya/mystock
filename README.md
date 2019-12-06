@@ -32,7 +32,7 @@ This runs the server and serves react-app from `/client/build` folder.
 ```
 npm run dev
 ```
-This will run both server and client application using `concurrently` in "development" evn. It also support auto-refresh on code changes.
+This will run both server and client application using `concurrently` in "development" enviroment. It also support auto-refresh on code changes.
 
 ## To build
 ```
